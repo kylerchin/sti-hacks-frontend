@@ -10,13 +10,6 @@
 </div>
 </div>
 <style>
-    h1 {
-        font-family: "IBM Plex Sans"
-    }
-
-    * {
-        font-family: "IBM Plex Sans"
-    }
 
     .bruzbackground {
         background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("/dennis-mita-qmg0MidYviw-unsplash.jpg") no-repeat;
