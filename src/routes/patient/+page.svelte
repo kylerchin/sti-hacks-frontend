@@ -37,7 +37,7 @@
 		'region',
 		'address',
 		'wealth',
-		'educational',
+		'education',
 		'working_status',
 		'marital',
 		'internet',
