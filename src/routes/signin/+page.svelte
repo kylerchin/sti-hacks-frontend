@@ -56,9 +56,3 @@ let auth = firebase.auth();
     <br/>
     <button on:click={loginWithGoogle} class='px-2 py-1 bg-blue-600 font-semibold text-white'>Login with Google</button>
 </div>
-
-<style>
-    h1 {
-        font-family: "IBM Plex Sans"
-    }
-    </style>

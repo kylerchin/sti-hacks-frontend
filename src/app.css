@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+    font-family: "IBM Plex Sans"
+}
+
+p {
+    font-family: "IBM Plex Sans"
+}
+
+h2 {
+    font-family: "IBM Plex Sans"
+}
+
+* {
+    font-family: "IBM Plex Sans"
+}
