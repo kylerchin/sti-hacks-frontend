@@ -21,6 +21,17 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+
+async function loginWithGoogle() {
+    try {
+      const provider = new firebase.auth.GoogleAuthProvider();
+
+      await firebase.auth().signInWithPopup(provider);
+    } catch (e) {
+      console.log(e);
+    }
+  }
    </script>
 
 <h1>
