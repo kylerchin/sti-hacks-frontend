@@ -85,6 +85,8 @@
 			<p class="text-white max-w-md text-left">
 				Register your patient under your profile and refer your patient to a DIS in the community!
 			</p>
+
+			<div class="px-3 py-2 bg-[#446e70] text-white" id="import">Import from Epic</div>
 		</div>
 
 		<div class="text-white text-left" id="right-box">
@@ -100,6 +102,13 @@
 <style>
 	.container {
 		display: flex;
+	}
+
+	#import {
+		width: 150px;
+		border-radius: 10px;
+		margin-top: 30px;
+		margin-left: 75px;
 	}
 
 	.left-box {
