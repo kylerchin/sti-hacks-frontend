@@ -16,7 +16,7 @@
 		<div class="flex flex-row gap-x-7 mt-1 ml-2 py-0.5">
 			<a href="/signin?who=dis"><div class="px-3 py-2 bg-white text-black">Sign-in as DIS</div></a>
 			<a href="/signin?who=provider"
-				><div class="px-3 py-2 bg-[#6096BA] text-white">Sign-in as provider</div></a
+				><div class="px-3 py-2 bg-[#446e70] text-white">Sign-in as provider</div></a
 			>
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 	}
 
 	.bruzbackground {
-		background-color: #274c77;
+		background-color: #1f3942;
 		/*background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("/dennis-mita-qmg0MidYviw-unsplash.jpg") no-repeat;*/
 		background-size: 100%;
 	}
