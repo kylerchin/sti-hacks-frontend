@@ -3,6 +3,57 @@
 	import Footer from './footer.svelte';
 </script>
 
+<script lang="ts">
+	// Import the functions you need from the SDKs you need
+	import { initializeApp } from 'firebase/app';
+	import firebase from 'firebase/compat/app';
+	import 'firebase/compat/auth';
+	import { onMount } from 'svelte';
+	// TODO: Add SDKs for Firebase products that you want to use
+	// https://firebase.google.com/docs/web/setup#available-libraries
+
+	// Your web app's Firebase configuration
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	const firebaseConfig = {
+		apiKey: 'AIzaSyAKUJIq6bjpUFSn9krJ9D2cQupN8biIyfw',
+		authDomain: 'sti-hackathon.firebaseapp.com',
+		projectId: 'sti-hackathon',
+		storageBucket: 'sti-hackathon.appspot.com',
+		messagingSenderId: '538088055127',
+		appId: '1:538088055127:web:117ad676c60ab848ee9e12',
+		measurementId: 'G-VL922YFEJ1'
+	};
+
+	onMount(() => {
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+
+		//const analytics = getAnalytics(app);
+
+		let auth = firebase.auth();
+
+		if (auth.currentUser) {
+			// The user is already signed in.
+		} else {
+			// The user is not signed in.
+		}
+	});
+
+	async function loginWithGoogle() {
+		try {
+			firebase.initializeApp(firebaseConfig);
+			let auth = firebase.auth();
+			// Initialize Firebase
+
+			const provider = new firebase.auth.GoogleAuthProvider();
+
+			await auth.signInWithPopup(provider);
+		} catch (e) {
+			console.log(e);
+		}
+	}
+</script>
+
 <div class="min-h-screen bruzbackground bg-[#1f3942] flex flex-col">
 	<Header />
 	<div class="mx-4 mt-36 w-full" id="text-body">
@@ -17,12 +68,9 @@
 				</h2>
 
 				<div class="flex flex-row gap-x-3 mt-1 ml-2 py-0.5">
-					<a href="/signin?who=dis"
-						><div class="px-3 py-2 bg-white text-black">Sign-in as DIS</div></a
-					>
-					<a href="/signin?who=provider"
-						><div class="px-3 py-2 bg-[#446e70] text-white">Sign-in as provider</div></a
-					>
+					
+						<button on:click={() => {loginWithGoogle("dis")}} class="px-3 py-2 bg-white text-black">Sign-in as DIS</button>
+					<button on:click={() => {loginWithGoogle("provider")}} class="px-3 py-2 bg-[#446e70] text-white">Sign-in as provider</button>
 				</div>
 			</div>
 		</div>
