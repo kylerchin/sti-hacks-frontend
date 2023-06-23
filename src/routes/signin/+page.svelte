@@ -1,8 +1,10 @@
 <script lang='ts'>
    
    // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+   import { initializeApp } from 'firebase/app';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import { onMount } from 'svelte';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -17,26 +19,46 @@ const firebaseConfig = {
   appId: "1:538088055127:web:117ad676c60ab848ee9e12",
   measurementId: "G-VL922YFEJ1"
 };
+   
+onMount(() => {
 
-// Initialize Firebase
+            // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
+//const analytics = getAnalytics(app);
 
-async function loginWithGoogle() {
+let auth = firebase.auth();
+
+  if (auth.currentUser) {
+    // The user is already signed in.
+  } else {
+    // The user is not signed in.
+  }
+});
+    
+    async function loginWithGoogle() {
     try {
-      const provider = new firebase.auth.GoogleAuthProvider();
+        firebase.initializeApp(firebaseConfig);
+        let auth = firebase.auth();
+                // Initialize Firebase
 
-      await firebase.auth().signInWithPopup(provider);
+        const provider = new firebase.auth.GoogleAuthProvider();
+
+        await auth.signInWithPopup(provider);
     } catch (e) {
-      console.log(e);
+        console.log(e);
     }
   }
+
+ 
+    
    </script>
 
-<h1>
-    
-    <h1 />
+<div class={"align-center text-center mt-32"}>
+    <h2>Sign into <span class="font-weight-600">Rheia</span></h2>
+    <br/>
+    <button on:click={loginWithGoogle} class='px-2 py-1 bg-blue-600 font-semibold text-white'>Login with Google</button>
+</div>
 
 <style>
     h1 {
