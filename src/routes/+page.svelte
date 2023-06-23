@@ -46,6 +46,7 @@
 			const provider = new firebase.auth.GoogleAuthProvider();
 
 			await auth.signInWithPopup(provider);
+			window.location.href = '/dashboard';
 		} catch (e) {
 			console.log(e);
 		}
