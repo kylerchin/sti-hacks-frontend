@@ -48,14 +48,11 @@ let auth = firebase.auth();
     } catch (e) {
         console.log(e);
     }
-  }
-
- 
-    
+  } 
    </script>
 
 <div class={"align-center text-center mt-32"}>
-    <h2>Sign into <span class="font-weight-600">Rheia</span></h2>
+    <h1>Sign into <span class="font-semibold">Rheia</span></h1>
     <br/>
     <button on:click={loginWithGoogle} class='px-2 py-1 bg-blue-600 font-semibold text-white'>Login with Google</button>
 </div>
