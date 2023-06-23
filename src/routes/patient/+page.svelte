@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Header from '../header.svelte';
 	import { onMount } from 'svelte';
-	import fetch from 'node-fetch';
 
 	let textBoxes: string[] = []; // Array to store the values of text boxes
 
@@ -11,39 +10,41 @@
 	});
 
 	let values: string[] = [
-		'FIRST*',
-		'LAST*',
-		'AGE*',
-		'SEX*',
-		'ETHNICITY*',
-		'REGION*',
-		'ADDRESS*',
-		'WEALTH INDEX*',
-		'EDUCATION*',
-		'WORKING STATUS*',
-		'MARITAL STATUS*',
-		'INTERNET ACCESS*',
-		'ALCOHOL CONSUMPTION*',
-		'AGE AT FIRST SEX*',
-		'CONNECTIONS',
-		'DIS REFERRAL'
+		'First Name*',
+		'Last Name*',
+		'Age*',
+		'Sex*',
+		'Ethnicity*',
+		'Region*',
+		'Address*',
+		'Wealth Index*',
+		'Education*',
+		'Working Status*',
+		'Marital Status*',
+		'Internet Access*',
+		'Alcohol Consumption*',
+		'Age at First Sex*',
+		'Connections',
+		'DIS Referral'
 	];
 
 	let keys: string[] = [
-		'',
-		'',
+		'first',
+		'last',
 		'age',
 		'sex',
 		'ethnicity',
 		'region',
-		'',
+		'address',
 		'wealth',
 		'educational',
 		'working_status',
 		'marital',
 		'internet',
 		'alcohol',
-		'age_of_first'
+		'age_of_first',
+		'connections',
+		'dis_referral'
 	];
 
 	function saveData() {
@@ -53,7 +54,9 @@
 			data[key] = textBoxes[index];
 		});
 
-		fetch('/patient', {
+		console.log('data to send', data);
+
+		fetch('https://stibackend.kylerchin.com/addpatient', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -63,13 +66,14 @@
 			.then((response) => response.json())
 			.then((data) => {
 				console.log(data);
+
+				textBoxes = Array(15).fill('');
+				window.location.href = '/dashboard';
 			})
 			.catch((error) => {
 				console.error(error);
+				// /alert('Error saving data');
 			});
-
-		textBoxes = Array(15).fill('');
-		window.location.href = '/dashboard';
 	}
 </script>
 
@@ -85,7 +89,7 @@
 
 		<div class="text-white text-left" id="right-box">
 			{#each textBoxes as textBox, index}
-				<p>{values[index]}</p>
+				<p class="text-lg">{values[index]}</p>
 				<input type="text" bind:value={textBox} />
 			{/each}
 			<button class="register" on:click={saveData}>Register Patient</button>
