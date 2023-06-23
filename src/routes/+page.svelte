@@ -1,9 +1,7 @@
 <script lang="ts">
 	import Header from './header.svelte';
 	import Footer from './footer.svelte';
-</script>
 
-<script lang="ts">
 	// Import the functions you need from the SDKs you need
 	import { initializeApp } from 'firebase/app';
 	import firebase from 'firebase/compat/app';
@@ -39,7 +37,7 @@
 		}
 	});
 
-	async function loginWithGoogle() {
+	async function loginWithGoogle(bruz: string) {
 		try {
 			firebase.initializeApp(firebaseConfig);
 			let auth = firebase.auth();
@@ -68,9 +66,18 @@
 				</h2>
 
 				<div class="flex flex-row gap-x-3 mt-1 ml-2 py-0.5">
-					
-						<button on:click={() => {loginWithGoogle("dis")}} class="px-3 py-2 bg-white text-black">Sign-in as DIS</button>
-					<button on:click={() => {loginWithGoogle("provider")}} class="px-3 py-2 bg-[#446e70] text-white">Sign-in as provider</button>
+					<button
+						on:click={() => {
+							loginWithGoogle('dis');
+						}}
+						class="px-3 py-2 bg-white text-black">Sign-in as DIS</button
+					>
+					<button
+						on:click={() => {
+							loginWithGoogle('provider');
+						}}
+						class="px-3 py-2 bg-[#446e70] text-white">Sign-in as provider</button
+					>
 				</div>
 			</div>
 		</div>
