@@ -56,8 +56,8 @@
 <div class="min-h-screen bruzbackground bg-[#1f3942] flex flex-col">
 	<Header />
 	<div class="mx-4 mt-36 w-full" id="text-body">
-		<div class="md:grid md:grid-cols-2 md:gap-x-2 w-full">
-			<div class="hidden md:block">PUT THE GOD DAMN IMAGE HERE</div>
+		<div class="md:grid md:grid-cols-2 md:gap-x-2 w-full" id="body">
+			<!-- <div class="hidden md:block">PUT THE GOD DAMN IMAGE HERE</div> -->
 			<div class="">
 				<h1 class="text-gray-50 px-2 py-1 max-w-md text-left">Rheia</h1>
 
@@ -94,6 +94,10 @@
 
 	* {
 		font-family: 'IBM Plex Sans';
+	}
+
+	#body {
+		margin-left: 300px;
 	}
 
 	.bruzbackground {

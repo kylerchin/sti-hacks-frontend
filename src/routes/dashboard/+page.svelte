@@ -15,19 +15,19 @@
 
 	let patientItems = [
 		{
-			name: 'Bobby Brown',
-			prob: '81%',
-			status: 'Completed'
+			name: 'Patient:  Bobby Brown',
+			prob: 'Likelihood:   81%',
+			status: 'Status:   Completed'
 		},
 		{
-			name: 'Wendy William',
-			prob: '56%',
-			status: 'Pendng'
+			name: 'Patient:   Wendy William',
+			prob: 'Likelihood: 56%',
+			status: 'Status: Pendng'
 		},
 		{
-			name: 'Abby Cadabby',
-			prob: '10%',
-			status: 'Pending'
+			name: 'Patient: Abby Cadabby',
+			prob: 'Likelihood: 10%',
+			status: 'Status: Pending'
 		}
 	];
 </script>
@@ -46,7 +46,7 @@
 	<div class="middle">
 		<div class="header">
 			<div class="header-text">
-				<h1>Welcome Physician</h1>
+				<h1>Welcome Dr. White</h1>
 			</div>
 		</div>
 
@@ -79,28 +79,28 @@
 	.body {
 		display: flex;
 		flex-direction: row;
-		background-color: #1a3037;
+		background-color: #446e70;
+		height: 120%;
 	}
 
 	.sidebar {
-		width: 250px;
-		height: 700px;
-		background-color: #e7ecef;
-		padding: 20px;
-		margin-left: 20px;
-		margin-top: 50px;
-		border-radius: 10px;
+		padding-top: 50px;
+		padding-left: 20px;
+		padding-right: 30px;
 	}
 
 	.sidebar-item {
 		display: flex;
 		align-items: center;
-		margin-bottom: 10px;
 		cursor: pointer;
-		padding: 5px;
+		padding-top: 5px;
+		padding-bottom: 20px;
 	}
 
 	.sidebar-item:hover {
+		width: 130px;
+		height: 40px;
+		border-radius: 10px;
 		background-color: #e7ecef;
 	}
 
@@ -157,14 +157,14 @@
 		margin-top: 60px;
 		margin-left: 50px;
 		width: -400px;
-		height: 380px;
+		height: 400px;
 	}
 
 	.patient-box {
 		color: white;
 		padding-left: 20px;
 		padding-top: 15px;
-		background-color: #446e70;
+		background-color: #1a3037;
 		height: 100px;
 		border-radius: 10px;
 		margin-left: -260px;
